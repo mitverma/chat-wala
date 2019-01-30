@@ -1,0 +1,69 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon class="icon-menu" name="menu"></ion-icon>
+		</button>
+		<ion-title>Home</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<!-- <button ion-button full round (click)="loadGroupsAndUsers();">Load group message</button> -->
+	<ion-list class="home-list">
+		<div *ngFor="let list of currentActiveList">
+			<!-- group section -->
+			<ion-list class="group-section" *ngIf="list.type == 'group' ">
+				<ion-item-sliding>
+					<ion-item (click)="chatInGroup(list, 'groupChat');">
+						<div class="avatar">
+							<img src="../../assets/imgs/multiple-users.svg" class="img-fluid">
+						</div>
+						<div class="detail">
+							<h2 class="title">{{list.displayName ? list.displayName : list.name}}</h2>
+							<h6 class="last-msg-user">{{list.last_message_user}}</h6>
+							<h6 class="last-message">{{list.last_message_content}}</h6>
+							<!-- <span>{{list.createdAt | date: 'dd-MMM-yyyy hh:mm a'}}</span> -->
+							<span class="last-msg-time">{{list.createdAt | date: 'hh:mm a'}}</span>
+						</div>
+					</ion-item>
+					<ion-item-options side="right">
+						<button ion-button color="primary" (click)="chatInGroup(list, 'groupInfo')">
+							<ion-icon name="text"></ion-icon>
+							More
+						</button>
+						<button ion-button color="danger">
+							<ion-icon name="trash"></ion-icon>
+							Remove
+						</button>
+					</ion-item-options>
+				</ion-item-sliding>
+			</ion-list>			
+			<!-- group section --> 
+			<!-- user section -->
+			<ion-list>
+				<ion-item class="user-section" *ngIf="list.type == 'user' "  (click)="chatToUser(list);">
+					<div class="avatar">
+						<p class="first-char">{{list.name}}</p>
+					</div>
+					<div class="detail">
+						<h5 class="title">{{list.displayName ? list.displayName : list.name}}</h5>
+						<h6 class="last-msg-user">{{list.name ? list.name : list.last_message_user}}</h6>
+						<h6 class="last-message">{{list.last_message_content}}</h6>
+						<!-- <span>{{list.createdAt | date: 'dd-MMM-yyyy hh:mm a'}}</span> -->
+						<span class="last-msg-time">{{list.createdAt | date: 'hh:mm a'}}</span>
+					</div>
+				</ion-item>
+			</ion-list>			
+			<!-- user section -->			
+		</div>
+	</ion-list>
+</ion-content>

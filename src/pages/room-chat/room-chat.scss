@@ -1,0 +1,55 @@
+page-room-chat {
+	.room-chat {
+		margin-bottom: 15px;
+		&.clearfix {
+			&:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+		}
+		&.theirs {
+			> .chat-holder {
+				width: 50%;	
+				padding: 10px;
+				border-radius: 0px 8px 8px 8px;
+				box-shadow: 1px 2px 3px #adadad;
+				background-color: #e8e8e8;
+				float: left;
+			}
+		}
+		&.mine {
+			> .chat-holder {
+				width: 50%;	
+				padding: 10px;
+				border-radius: 8px 0px 8px 8px;			
+				box-shadow: 1px 2px 3px #adadad;
+				background-color: #26da69;
+				float: right;
+			}
+		}
+		.timestamp {
+			display: block;
+			font-size: 10px;
+		}
+	}
+	.group-info {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		transform: translateY(-50%);
+		img {
+			width: 25px;
+		}
+	}
+
+	.view-group-list {
+		width: 100%;
+		height: 100%;
+		padding: 16px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+	}
+}

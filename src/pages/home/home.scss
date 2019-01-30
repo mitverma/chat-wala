@@ -1,0 +1,47 @@
+page-home {
+	.home-list {
+		.item-md {
+			padding: 0px;
+			.item-inner {
+				padding-right: 0;
+			}
+		}
+		.list-md {
+			margin: 0;
+		}
+		.avatar {
+			width: 45px;
+			height: 45px;
+			padding: 10px;
+			border-radius: 100%;
+			background-color: #484848;
+			display: inline-block;
+		}
+		.detail {
+			width: calc(100% - 50px);
+			padding: 5px 10px 10px;
+			border-bottom: 1px solid #ababab;
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			.title {
+				font-size: 17px;
+				font-weight: 500;
+			}
+		}
+		.last-msg-time {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			font-size: 12px;
+		}
+		p.first-char {
+			color: #fff;
+			margin: -3px 0 0 4px ;
+			letter-spacing: 50px;			
+		}
+		p.first-char::first-letter {
+			font-size: 25px;
+		}
+	}	
+}

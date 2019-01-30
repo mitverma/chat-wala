@@ -1,0 +1,52 @@
+page-chat {
+	.scroll-content {
+		background: url('../../assets/imgs/chat-bg.png');
+		background-size: 100%;
+	}
+	form {
+		background-color: #fff;
+		position: sticky;
+		bottom: 0;
+	}
+	.chat-list {
+		margin-bottom: 15px;
+		&.clearfix {
+			&:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+		}
+		&.theirs {
+			> .chat-holder {
+				width: 50%;	
+				padding: 10px;
+				border-radius: 0px 8px 8px 8px;
+				box-shadow: 1px 2px 3px #adadad;
+				background-color: #e8e8e8;
+				float: left;
+			}
+		}
+		&.mine {
+			> .chat-holder {
+				width: 50%;	
+				padding: 10px;
+				border-radius: 8px 0px 8px 8px;			
+				box-shadow: 1px 2px 3px #adadad;
+				background-color: #26da69;
+				float: right;
+			}
+		}
+		.timestamp {
+			display: block;
+			font-size: 10px;
+		}
+	}
+}
+
+/*deviceToken: ""
+email: "amitvermanew@test.com"
+id: "-LWVr07sn24SXO-75ko2"
+name: "amit"
+status: true
+uid: "lJDgD8VZntOiQJLhUb5XlaAZdyt1"*/
